@@ -97,6 +97,16 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES += \
     vendor/liquid/prebuilt/common/etc/spn-conf.xml:system/etc/spn-conf.xml
 
+ # USE V4A
+ifeq ($(WITH_V4A),true)
+PRODUCT_PACKAGES += \
+    VIPER4Android
+
+PRODUCT_COPY_FILES += \
+    vendor/liquid/prebuilt/common/lib/soundfx/libv4a.so:system/lib/soundfx/libv4a.so
+else
+endif
+
 # Google Dialer
 PRODUCT_COPY_FILES +=  \
     vendor/liquid/prebuilt/common/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml 
@@ -155,6 +165,8 @@ PRODUCT_PACKAGES += \
     DU-Fonts \
     ExactCalculator
 
+    ForceStop \
+    SMWeatherProvider \
 # Omni packages
 PRODUCT_PACKAGES += \
     OmniJaws \
