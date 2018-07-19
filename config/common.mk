@@ -89,6 +89,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/liquid/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
 
+# Phonelocation!
+PRODUCT_COPY_FILES +=  \
+    vendor/liquid/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
+
+# World SPN overrides list
+PRODUCT_COPY_FILES += \
+    vendor/liquid/prebuilt/common/etc/spn-conf.xml:system/etc/spn-conf.xml
+
 # Google Dialer
 PRODUCT_COPY_FILES +=  \
     vendor/liquid/prebuilt/common/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml 
@@ -127,8 +135,8 @@ PRODUCT_PACKAGES += \
     Eleven \
     Gallery2 \
     Jelly \
-    Launcher3
-
+    Launcher3 \
+    PhoneLocationProvider \
 # Liquid packages
 PRODUCT_PACKAGES += \
     LiquidLounge \
@@ -244,12 +252,12 @@ PRODUCT_PACKAGES += \
 # Version System
 PRODUCT_VERSION_MAJOR = 9
 PRODUCT_VERSION_MINOR = 1
-PRODUCT_VERSION_MAINTENANCE := 4
+PRODUCT_VERSION_MAINTENANCE := 4-tudourom
 
 ifeq ($(TARGET_VENDOR_SHOW_MAINTENANCE_VERSION),true)
     LIQUID_VERSION_MAINTENANCE := $(PRODUCT_VERSION_MAINTENANCE)
 else
-    LIQUID_VERSION_MAINTENANCE := 4
+    LIQUID_VERSION_MAINTENANCE := 4-tudourom
 endif
 
 # Set LIQUID_BUILDTYPE from the env RELEASE_TYPE, for jenkins compat
