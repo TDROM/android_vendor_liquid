@@ -97,11 +97,7 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES += \
     vendor/liquid/prebuilt/common/etc/spn-conf.xml:system/etc/spn-conf.xml
 
-#baid and qq
-PRODUCT_COPY_FILES += \
-    vendor/liquid/prebuilt/common/app/baidushurufa:system/app/baidushurufa
-PRODUCT_COPY_FILES += \
-    vendor/liquid/prebuilt/common/app/QQBrowser:system/app/QQBrowser
+
 
  # USE V4A
 ifeq ($(WITH_V4A),true)
@@ -149,7 +145,6 @@ PRODUCT_PACKAGES += \
 # Required packages
 PRODUCT_PACKAGES += \
     Eleven \
-    Gallery2 \
     Jelly \
     Launcher3 \
     PhoneLocationProvider \
@@ -169,8 +164,7 @@ PRODUCT_PACKAGES += \
 # Custom packages
 PRODUCT_PACKAGES += \
     DU-Fonts \
-    ExactCalculator
-
+    ExactCalculator \
     ForceStop \
     SMWeatherProvider \
 # Omni packages
